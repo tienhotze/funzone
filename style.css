@@ -1,0 +1,577 @@
+/* --- Base Styles & Variables --- */
+:root {
+    --dark-blue: #030027; /* Slightly darker blue for more contrast */
+    --light-blue: #00FFFF;
+    --neon-pink: #FF00FF;
+    --neon-red: #FF0000;
+    --neon-yellow: #FFFF00;
+    --neon-green: #00FF00;
+    --white: #FFFFFF;
+    --light-grey: #f4f4f4;
+    --grey: #ccc;
+    --dark-grey: #333;
+    --header-height: 200px; /* Define header height for calculations */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-padding-top: var(--header-height); /* Offset scroll target for sticky header */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; color: var(--neon-pink); } /* Use a neon color for slogan */
+h3 { font-size: 1.8rem; text-align: center; margin-bottom: 2rem; color: var(--light-blue); }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--neon-pink);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevent extra space below images */
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Header --- */
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: var(--white);
+    height: var(--header-height);
+    position: fixed; /* Changed to fixed for better stickiness */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 200px; /* Adjust logo height */
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav li {
+    margin-left: 25px;
+}
+
+nav a {
+    color: var(--white);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    /* Add or adjust the font-size property below */
+    font-size: 1.3rem; /* Example: Increase size. Try 1rem, 1.1rem, 18px, etc. */
+}
+
+nav a:hover {
+    color: var(--neon-pink);
+}
+
+.whatsapp-icon img {
+    height: 35px; /* Adjust icon size */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding-top: calc(var(--header-height) + 40px); /* Adjust padding top to account for fixed header */
+    padding-bottom: 60px;
+    min-height: 70vh; /* Give it some height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('images/hero-image.jpg') no-repeat center center/cover; /* Add background */
+    position: relative; /* For overlay */
+}
+
+/* Add a dark overlay for text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 0, 39, 0.7); /* Dark blue overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative; /* Ensure content is above overlay */
+    z-index: 2;
+    max-width: 700px;
+}
+
+/* --- Call to Action Button --- */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--neon-red), var(--neon-pink), var(--light-blue));
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    background-size: 200% auto; /* For gradient animation */
+}
+
+.cta-button:hover {
+    background-position: right center; /* Change gradient direction */
+    box-shadow: 0 0 15px var(--neon-pink);
+    transform: translateY(-2px);
+}
+
+/* --- Games Section --- */
+.games {
+    padding: 60px 0;
+}
+
+.game-carousel-wrapper {
+    position: relative; /* For positioning buttons */
+    margin: 0 auto;
+    max-width: 90%; /* Adjust width as needed */
+}
+
+.game-carousel {
+    display: flex;
+    overflow-x: hidden; /* Hide scrollbar, use buttons */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding: 1rem 0; /* Add padding for shadow/outline */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+.game-carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.carousel-item {
+    flex: 0 0 300px; /* Fixed width for each item */
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure content stays within rounded corners */
+}
+
+.carousel-item:last-child {
+    margin-right: 0;
+}
+
+.carousel-item img {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure images cover the area nicely */
+    width: 100%;
+}
+
+.carousel-item h4 {
+    color: var(--light-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.carousel-item p {
+    font-size: 0.9rem;
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.carousel-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2); /* Light blue glow */
+}
+
+/* Carousel Buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    font-size: 2rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: -15px; /* Position outside the wrapper slightly */
+}
+
+.carousel-button.next {
+    right: -15px; /* Position outside the wrapper slightly */
+}
+
+/* --- Birthday Party Section --- */
+.parties {
+    padding: 60px 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly different background */
+}
+
+.parties-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.party-packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between packages */
+}
+
+.package {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Subtle light blue border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.2); /* Neon pink glow */
+}
+
+.package img {
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.package h4 {
+    color: var(--neon-yellow); /* Neon yellow for package titles */
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* --- Adjust UL styles --- */
+.package ul {
+    display: inline-block; /* Allows the UL block to be centered by parent's text-align:center */
+    text-align: left;    /* Keeps the text *inside* the list left-aligned */
+    margin: 0 auto 1.5rem auto; /* Auto margins for horizontal centering (alternative to inline-block), ensure bottom margin */
+    padding-left: 25px;   /* Adjust this value to control bullet indentation */
+    max-width: max-content; /* Prevents the ul from taking full width */
+    list-style-position: outside; /* Ensures bullets are outside the text block */
+}
+
+.package li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    list-style: disc; /* Use standard bullet points */
+    color: var(--light-grey);
+}
+
+.package .price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.package .cta-button {
+    margin-top: 0; /* Reset margin */
+}
+
+/* --- Contact Section --- */
+.contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--light-blue);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize only */
+}
+
+.contact form button[type="submit"] {
+    display: block; /* Make button full width */
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-grey);
+    color: var(--grey);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-content a {
+    color: var(--grey);
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: var(--neon-pink);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 70px; /* Slightly smaller header */
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.5rem; }
+
+    .header-container {
+        flex-direction: column;
+        height: auto; /* Allow header to grow */
+        padding: 10px 0;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items */
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .whatsapp-icon {
+        position: absolute; /* Position relative to header */
+        top: 20px; /* Adjust as needed */
+        right: 20px;
+    }
+
+    html {
+        scroll-padding-top: 0; /* Remove scroll padding on mobile */
+    }
+    header {
+        position: static; /* Remove fixed header on mobile */
+        height: auto;
+    }
+    .hero {
+        padding-top: 40px; /* Adjust padding */
+        min-height: 50vh;
+    }
+
+    .game-carousel-wrapper {
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .carousel-button {
+        font-size: 1.5rem;
+        padding: 3px 8px;
+    }
+     .carousel-button.prev {
+        left: 5px;
+    }
+     .carousel-button.next {
+        right: 5px;
+    }
+
+    .carousel-item {
+        flex-basis: 250px; /* Slightly smaller items */
+    }
+
+    .party-packages {
+        grid-template-columns: 1fr; /* Stack packages */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+
+    .cta-button,
+    .contact form button[type="submit"] {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+     .carousel-item {
+        flex-basis: 220px; /* Even smaller items */
+    }
+}
+
+/* --- Location Section --- */
+.location {
+    padding: 60px 0;
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly different background */
+}
+
+.location-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px; /* Space between text and map */
+    align-items: center; /* Vertically center items if they wrap */
+}
+
+.location-details {
+    flex: 1; /* Take up available space */
+    min-width: 280px; /* Minimum width before wrapping */
+}
+
+.location-details h3 {
+    text-align: left; /* Align heading left in this section */
+    margin-bottom: 1.5rem;
+    color: var(--neon-green); /* Use a different neon color */
+}
+
+.location-details p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.map-embed {
+    flex: 1.5; /* Give map slightly more space if possible */
+    min-width: 300px; /* Minimum width */
+}
+
+.map-embed iframe {
+    display: block; /* Remove extra space below iframe */
+    width: 100%; /* Make iframe responsive */
+    height: 400px; /* Adjust height as needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.map-button {
+     background: linear-gradient(90deg, var(--neon-green), var(--light-blue)); /* Green/Blue Gradient */
+}
+.map-button:hover {
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+
+/* --- Responsive Adjustments for Location --- */
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: column; /* Stack items vertically */
+        gap: 30px;
+    }
+
+    .location-details {
+        text-align: center; /* Center text on smaller screens */
+    }
+
+     .location-details h3 {
+        text-align: center; /* Center heading too */
+    }
+
+    .map-embed iframe {
+        height: 300px; /* Reduce map height */
+    }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzone - Where the Fun Never Stops!</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container container">
+            <a href="index.html" class="logo">
+                <img src="images/funzone-logo.svg" alt="Funzone Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#parties">Parties</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#location">Location</a></li> <!-- Added Location Link -->
+                </ul>
+            </nav>
+            <a href="whatsapp://send?phone=+659673446" class="whatsapp-icon" target="_blank" rel="noopener noreferrer">
+                <img src="images/WhatsApp.svg" alt="Chat on WhatsApp">
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- ... (Hero content remains the same) ... -->
+         <div class="hero-content container">
+            <h1>Welcome to Funzone!</h1>
+            <h2>Where the Fun Never Stops!</h2>
+            <p>Dive into a world of excitement with the latest arcade games, VR experiences, and unforgettable party packages right here in Singapore!</p>
+            <a href="#games" class="cta-button">Explore Our Games</a>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games container">
+        <h3>Our Awesome Games</h3>
+        <div class="game-carousel-wrapper">
+             <button class="carousel-button prev" aria-label="Previous Game">❮</button>
+             <!-- Add id="gameCarousel" to the div below -->
+             <div class="game-carousel" id="gameCarousel">
+                <div class="carousel-item">
+                    <img src="images/nitro-speed.jpg" alt="Arcade Game 1">
+                    <h4>Nitro Speed Racer X</h4>
+                    <p>Experience high-speed racing action!</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/wave-rider.jpg" alt="Arcade Game 2">
+                    <h4>Wave Rider</h4>
+                    <p>Immerse yourself in a 4D  jet skii</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/bullseye-crackshot.jpg" alt="Arcade Game 3">
+                    <h4>Bullseye Crackshot</h4>
+                    <p>Test your sharp shooting skills</p>
+                </div>
+                 <div class="carousel-item">
+                    <img src="images/pirate-game.jpg" alt="Arcade Game 4">
+                    <h4>Pirate Adventure</h4>
+                    <p>Sail into the 7 seas for treasure</p>
+                </div>
+                 <div class="carousel-item">
+                    <img src="images/air-hockey.jpg" alt="Arcade Game 5">
+                    <h4>Air Hockey Challenge</h4>
+                    <p>Fast-paced fun for two players!</p>
+                </div>
+                <!-- Add more .carousel-item divs for each game -->
+             </div>
+            <button class="carousel-button next" aria-label="Next Game">❯</button>
+        </div>
+    </section>
+
+    <!-- Birthday Party Section -->
+    <section id="parties" class="parties">
+        <!-- ... (Party content remains the same) ... -->
+        <div class="container">
+            <h3>Unforgettable Birthday Parties</h3>
+            <p class="parties-intro">Celebrate your special day with non-stop fun at Funzone!</p>
+            <div class="party-packages">
+                <div class="package">
+                    <h4>Arcade Blast Package</h4>
+                    <ul>
+                        <li>2 Hours of Unlimited Arcade Play</li>
+                        <li>3 claw machine tokens for everyone and 5 for birthday child</li>
+                        <li>Special Funzone lanyard for each player</li>
+                    </ul>
+                    <p class="price">Min $490 for 10 players</p>
+                    <p>Additional $15 per guest for light bite and drinks in designated party area for 1.5 hours</p>
+                    <a href="#contact" class="cta-button">Book This Package</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact container">
+         <!-- ... (Contact form remains the same) ... -->
+         <h3>Get In Touch!</h3>
+        <p>Have questions or want to book a party? Send us a message!</p>
+        <form id="contact" method="POST" netlify>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Inquiry</button>
+        </form>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container location-container">
+            <div class="location-details">
+                <h3>Visit Us!</h3>
+                <p>
+                    <strong>Funzone @ Shaw Plaza</strong><br>
+                    Shaw Plaza - Twin Heights<br>
+                    360 Balestier Road, #04-06/K1<br>
+                    Singapore 329783
+                </p>
+                <p>
+                    <!-- Optional: Add Opening Hours -->
+                    <!-- Mon - Fri: 11:00 AM - 9:00 PM<br>
+                    Sat - Sun & PH: 10:00 AM - 10:00 PM -->
+                </p>
+                <a href="https://www.google.com/maps/place/Shaw+Plaza+-+Twin+Heights/@1.3214808,103.8487128,17z/data=!3m1!4b1!4m6!3m5!1s0x31da19e02beadc37:0x838646e168bcd36!8m2!3d1.3214808!4d103.8512877!16s%2Fg%2F1ptznl576?entry=ttu" target="_blank" rel="noopener noreferrer" class="cta-button map-button">Get Directions</a>
+            </div>
+            <div class="map-embed">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7396708050786!2d103.84871277496578!3d1.321480835570494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19e02beadc37%3A0x838646e168bcd36!2sShaw%20Plaza%20-%20Twin%20Heights!5e0!3m2!1sen!2ssg!4v1700465849871!5m2!1sen!2ssg"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer>
+       <!-- ... (Footer content remains the same) ... -->
+       <div class="container footer-content">
+            <p>© <span id="year"></span> Funzone Singapore. All rights reserved.</p>
+            <p>360 Balestier Road, #04-06/K1, Singapore 329783</p> <!-- Update this if needed -->
+             <div class="social-links">
+            </div>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
